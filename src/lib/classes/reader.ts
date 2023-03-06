@@ -1,22 +1,16 @@
-type TRole = "free" | "vip" | "admin";
+export type TRole = "free" | "vip" | "admin";
 
-class Cart {
-   
-}
+class Cart {}
 
 class Reader {
-	constructor(
+	constructor (
 		private _username: string,
 		private _photoUrl: string,
-		private _role: TRole,
+		private role: TRole,
 		private _points: number,
 		private _annualGoal: number,
-		private _favouriteGenres: string[]
+		private _favouriteGenres: string[],
 	) {}
-
-	registerMembership(membership: "free" | "vip") {}
-
-	addReview(rating: number, text?: string) {}
 
 	get points(): number {
 		return this._points;
@@ -34,6 +28,10 @@ class Reader {
 		return this._photoUrl;
 	}
 
+   get favouriteGenres(): string[] {
+      return this._favouriteGenres;
+   }
+
 	setPoints(newPoints: number) {}
 
 	setAnnualGoal(newAnnualGoal: number) {}
@@ -41,6 +39,12 @@ class Reader {
 	setUsername(newUsername: string) {}
 
 	setPhoto(imgFile: File) {}
+
+   setFavouriteGenres(favouriteGenres: string[]) {}
+
+	registerMembership(membership: "free" | "vip") {}
+
+	addReview(rating: number, text?: string) {}
 }
 
 export default Reader;

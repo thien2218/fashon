@@ -1,25 +1,55 @@
-import BookFragment from "./bookFragment";
+import BookFragment, { type TLabel } from "./bookFragment";
 
 class Book extends BookFragment {
-   constructor(
+	constructor (
+      bookId: string,
 		title: string,
 		authors: string[],
 		coverUrl: string,
 		price: number,
 		avgRating: number,
 		ratingCount: number,
-      genre: string,
-      quantity: number,
-      readonly description: string,
-      readonly pageCount: number,
-      readonly publisher: string,
-      readonly publishedYear: number,
-      readonly language: string,
-      readonly previewLink: string,
-      readonly subtitle: string,
+		genre: string,
+		quantity: number,
+      
+		readonly description: string,
+		readonly pageCount: number,
+		readonly publisher: string,
+		readonly publishedYear: number,
+		readonly language: string,
+		readonly previewLink: string,
+		readonly subtitle: string,
+      
+      markDate: Date | null,
+      label: TLabel,
+
+      lastBorrowDate: Date | null,
+      borrowTime: number | null,
+      extendableTime: number,
+      allowBorrow: boolean,
+      isReturned: boolean = false,
    ) {
-      super(title, authors, coverUrl, price, avgRating, ratingCount, genre, quantity);
-   }
+		super(
+         bookId,
+			title,
+			authors,
+			coverUrl,
+			price,
+			avgRating,
+			ratingCount,
+			genre,
+			quantity,
+
+         markDate,
+         label,
+         
+         lastBorrowDate,
+         borrowTime,
+         extendableTime,
+         allowBorrow,
+         isReturned,
+		);
+	}
 }
 
 export default Book;
