@@ -11,6 +11,7 @@ class Book extends BookFragment {
 		ratingCount: number,
 		genre: string,
 		quantity: number,
+      allowBorrow: boolean,
       
 		readonly description: string,
 		readonly pageCount: number,
@@ -26,7 +27,6 @@ class Book extends BookFragment {
       lastBorrowDate: Date | null,
       borrowTime: number | null,
       extendableTime: number,
-      allowBorrow: boolean,
       isReturned: boolean = false,
    ) {
 		super(
@@ -39,6 +39,7 @@ class Book extends BookFragment {
 			ratingCount,
 			genre,
 			quantity,
+         allowBorrow,
 
          markDate,
          label,
@@ -46,10 +47,11 @@ class Book extends BookFragment {
          lastBorrowDate,
          borrowTime,
          extendableTime,
-         allowBorrow,
          isReturned,
 		);
 	}
+
+   // get authorWikiLinks(): Array<string> {}
 }
 
 export default Book;

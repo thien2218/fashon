@@ -20,21 +20,21 @@ class BookFragment {
 		readonly ratingCount: number,
 		readonly genre: string,
 		readonly quantity: number,
+		private allowBorrow: boolean,
 
 		private _markDate: Date | null,
 		private _label: TLabel,
 
-		private lastBorrowDate: Date | null,
+		private _lastBorrowDate: Date | null,
 		private _borrowTime: number | null,
 		private _extendableTime: number | null,
-		private allowBorrow: boolean,
 		private _isReturned: boolean = false,
 	) {}
 
 	// BORROW ACTIVITY
 	get remainingTime(): number {
 		// Compute the remaining time by this formula:
-		// this.lastBorrowDate + this._borrowTime - currentTime
+		// this._lastBorrowDate + this._borrowTime - currentTime
 		// Return remaining time if it's greater than 0
 		// Else return 0
 		return 0;
@@ -43,7 +43,7 @@ class BookFragment {
 	get status(): TStatus {
 		return this.allowBorrow
 			? "Unavailable for borrow"
-			: !this.isReturned && this.remainingTime > 0 && this.lastBorrowDate
+			: !this.isReturned && this.remainingTime > 0 && this._lastBorrowDate
 			? "In use"
 			: this.isReturned && this.remainingTime > 0
 			? "Returned"
@@ -69,6 +69,8 @@ class BookFragment {
 	get isReturned(): boolean | null {
 		return this._isReturned;
 	}
+
+   setLastBorrowDate(lastBorrowDate: Date) {}
 
 	setBorrowTime(newBorrowTime: number) {
 		// Update the new borrow time of a book in the database

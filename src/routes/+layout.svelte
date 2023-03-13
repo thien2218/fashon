@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { supabase } from "$lib/config/supabase";
+	import { supabase } from "$lib/supabase";
 	import { invalidate } from "$app/navigation";
 	import { onMount } from "svelte";
-	import "./styles.css";
-
+   import '@skeletonlabs/skeleton/styles/all.css';
+   import '../app.css';
+                     
 	onMount(() => {
 		const {
 			data: { subscription }
