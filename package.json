@@ -1,5 +1,5 @@
 {
-	"name": "bookstore-app",
+	"name": "libra",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -34,9 +34,10 @@
 	"dependencies": {
 		"@supabase/auth-helpers-sveltekit": "^0.8.7",
 		"@supabase/supabase-js": "^2.2.3",
+		"@urql/svelte": "^3.0.4",
 		"axios": "^1.2.2",
+		"graphql": "^16.6.0",
 		"json2csv": "^5.0.7",
-		"uuidv4": "^6.2.13",
 		"zod": "^3.20.2"
 	}
 }
