@@ -1,6 +1,6 @@
-export type TextField = {
+export type TextField<T extends string> = {
    label: string;
-   type: "email" | "password" | "tel" | "text";
-   name: string;
+   type: "password" | "tel" | "text";
+   name: T;
    placeholder: string;
 }

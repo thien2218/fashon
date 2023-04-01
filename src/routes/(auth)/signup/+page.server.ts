@@ -1,7 +1,7 @@
 import { AuthApiError } from "@supabase/supabase-js";
 import type { Actions } from "./$types";
 import { fail, redirect } from "@sveltejs/kit";
-import { z, ZodError } from "zod";
+import { z } from "zod";
 
 const SignupSchema = z
 	.object({
@@ -40,18 +40,17 @@ const SignupSchema = z
 export const actions: Actions = {
 	signup: async ({ request, locals }) => {
 		const body = Object.fromEntries(await request.formData());
+      const result = SignupSchema.safeParse(body);
 
-      try {
-         const result = SignupSchema.parse(body);
-
+      if (result.success) {
          const { data, error: err } = await locals.sb.auth.signUp({
-            email: result.email as string,
-            password: result.password as string
+            email: result.data.email,
+            password: result.data.password
          });
    
          if (err) {
             if (err instanceof AuthApiError && err.status === 400) {
-               return fail(err.status, {
+               return fail(400, {
                   error: "Invalid email or password"
                });
             }
@@ -62,15 +61,14 @@ export const actions: Actions = {
          }
    
          throw redirect(303, "/");
-      } catch (err) {
-         if (err instanceof ZodError) {
-            const { fieldErrors: errors } = err.flatten();
-            const { password, confirmPassword, ...rest } = body;
-            return {
-               data: rest,
-               errors,
-            };
-         }
       }
+      
+      const { fieldErrors: errors } = result.error.flatten();
+      const { password, confirmPassword, ...rest } = body;
+      
+      return {
+         data: rest,
+         errors,
+      };
 	}
 };

@@ -3,6 +3,7 @@
 	import TextInput from "$lib/components/TextInput.svelte";
 	import AuthActions from "$lib/components/AuthActions.svelte";
 	import AuthForm from "$lib/components/AuthForm.svelte";
+   import { enhance } from "$app/forms";
 
 	const fields: Array<TextField> = [
 		{
@@ -26,11 +27,11 @@
 	];
 
    export let form;
-   console.log(form);
+   $: console.log(form);
 </script>
 
 <AuthForm heading="Create an account">
-	<form class="space-y-4 md:space-y-6" action="?/signup" method="POST">
+	<form class="space-y-4 md:space-y-6" use:enhance action="?/signup" method="POST">
 		{#each fields as field (field.name)}
 			<TextInput {field} />
 		{/each}

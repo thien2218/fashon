@@ -1,29 +1,41 @@
 <script lang="ts">
-   import type { TextField } from "$lib/types";
+	import type { TextField } from "$lib/types";
 	import TextInput from "$lib/components/TextInput.svelte";
 	import AuthActions from "$lib/components/AuthActions.svelte";
 	import AuthForm from "$lib/components/AuthForm.svelte";
+	import { superForm } from "sveltekit-superforms/client";
+   import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte";
+	import type { PageData } from "./$types";
+	import { LoginSchema } from "$lib/schemas";
 
-	const fields: Array<TextField> = [
+	const fields: Array<TextField<"email" | "password">> = [
 		{
 			label: "Your email",
-			type: "email",
+			type: "text",
 			placeholder: "name@company.com",
-         name: "email"
+			name: "email"
 		},
 		{
 			label: "Password",
 			type: "password",
 			placeholder: "••••••••",
-         name: "password"
+			name: "password"
 		}
 	];
+
+	export let data: PageData;
+	const { form, errors, enhance } = superForm(data.form, {
+		taintedMessage: "Changes you made may not be saved.",
+		validators: LoginSchema
+	});
 </script>
 
+<SuperDebug data={$form} />
+
 <AuthForm heading="Sign in to your account">
-	<form class="space-y-4 md:space-y-6" action="?/login" method="POST">
-		{#each fields as field (field.type)}
-			<TextInput {field} />
+	<form class="space-y-4 md:space-y-6" use:enhance action="?/login" method="POST">
+		{#each fields as field (field.name)}
+			<TextInput {field} error={$errors[field.name]?.at(0)} bind:value={$form[field.name]} />
 		{/each}
 
 		<div class="flex items-center justify-between">
