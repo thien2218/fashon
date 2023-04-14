@@ -43,12 +43,12 @@
 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
 	{#if btnText === "Sign in"}
 		Don&apos;t have an account yet? <a
-			href="/auth/signup"
+			href="/signup"
 			class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a
 		>
 	{:else}
 		Already have an account? <a
-			href="/auth/login"
+			href="/login"
 			class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a
 		>
 	{/if}

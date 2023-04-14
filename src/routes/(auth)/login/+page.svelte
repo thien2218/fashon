@@ -4,7 +4,6 @@
 	import AuthActions from "$lib/components/AuthActions.svelte";
 	import AuthForm from "$lib/components/AuthForm.svelte";
 	import { superForm } from "sveltekit-superforms/client";
-   import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte";
 	import type { PageData } from "./$types";
 	import { LoginSchema } from "$lib/schemas";
 
@@ -29,8 +28,6 @@
 		validators: LoginSchema
 	});
 </script>
-
-<SuperDebug data={$form} />
 
 <AuthForm heading="Sign in to your account">
 	<form class="space-y-4 md:space-y-6" use:enhance action="?/login" method="POST">
