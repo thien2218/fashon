@@ -1,0 +1,11 @@
+query GetBooksQuery {
+   books(limit: 10) {
+      id
+      genre
+      language
+      title
+      subtitle
+      price
+      cover_url
+   }
+}

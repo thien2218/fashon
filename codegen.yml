@@ -1,0 +1,9 @@
+overwrite: true
+schema: "https://libra.hasura.app/v1/graphql"
+documents: "src/**/*.gql"
+generates:
+  src/lib/gql/generated.d.ts:
+    plugins:
+    - typescript
+    - typescript-operations
+    - typed-document-node

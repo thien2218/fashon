@@ -1,17 +1,13 @@
 <script lang="ts">
-	import { getContextClient, gql, queryStore } from "@urql/svelte";
+	import BookCard from "$lib/components/BookCard.svelte";
+	import { GetBooksQueryDocument } from "$lib/gql/generated";
+	import { getContextClient, queryStore } from "@urql/svelte";
 
-	const charactersQueryStore = queryStore({
+	const books = queryStore({
 		client: getContextClient(),
-		query: gql`
-			query MyQuery {
-				books(limit: 10) {
-					id
-					title
-				}
-			}
-		`
+		query: GetBooksQueryDocument
 	});
 </script>
 
-<pre>{JSON.stringify($charactersQueryStore, null, 2)}</pre>
+<!-- <pre>{JSON.stringify($books, null, 2)}</pre> -->
+<!-- <BookCard imgSrc={$books.data?.books[0].cover_url} /> -->
