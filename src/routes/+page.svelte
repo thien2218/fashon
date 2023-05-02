@@ -1,13 +1,16 @@
 <script lang="ts">
 	import BookCard from "$lib/components/BookCard.svelte";
-	import { GetBooksQueryDocument } from "$lib/gql/generated";
 	import { getContextClient, queryStore } from "@urql/svelte";
+   import { GetBooksDocument } from "$lib/graphql/generated.d";
 
-	const books = queryStore({
-		client: getContextClient(),
-		query: GetBooksQueryDocument
-	});
+   const store = queryStore({
+      client: getContextClient(),
+      query: GetBooksDocument,
+   });
+
+   const { data } = $store
+   console.log(data);
 </script>
 
-<!-- <pre>{JSON.stringify($books, null, 2)}</pre> -->
-<!-- <BookCard imgSrc={$books.data?.books[0].cover_url} /> -->
+<pre>{JSON.stringify($store, null, 2)}</pre>
+<!-- <BookCard imgSrc={data?.books[0].cover_url ?? ""} /> -->

@@ -1,4 +1,4 @@
-query GetBooksQuery {
+query GetBooks {
    books(limit: 10) {
       id
       genre

@@ -1,9 +1,11 @@
 overwrite: true
-schema: "https://libra.hasura.app/v1/graphql"
+schema: ${PUBLIC_GRAPHQL_URL}
 documents: "src/**/*.gql"
 generates:
-  src/lib/gql/generated.d.ts:
+  src/lib/graphql/generated.d.ts:
     plugins:
     - typescript
     - typescript-operations
     - typed-document-node
+    config:
+      useTypeImports: true

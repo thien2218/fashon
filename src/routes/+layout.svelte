@@ -1,8 +1,8 @@
 <script lang="ts">
-   type Headers = {
-      "x-hasura-role": string,
-      Authorization?: string,
-   }
+	type Headers = {
+		"x-hasura-role": string;
+		Authorization?: string;
+	};
 
 	import "@skeletonlabs/skeleton/themes/theme-skeleton.css";
 	import "@skeletonlabs/skeleton/styles/all.css";
@@ -17,10 +17,7 @@
 		setContextClient,
 		dedupExchange,
 		cacheExchange,
-		fetchExchange,
-
-		defaultExchanges
-
+		fetchExchange
 	} from "@urql/svelte";
 
 	export let data: PageData;
@@ -38,15 +35,15 @@
 
 	const client = createClient({
 		url: PUBLIC_GRAPHQL_URL,
-		exchanges: [...defaultExchanges],
+		exchanges: [dedupExchange, cacheExchange, fetchExchange],
 		fetchOptions: () => {
 			const headers: Headers = {
-				"x-hasura-role": session ? "reader" : "anon",
+				"x-hasura-role": session ? "reader" : "anon"
 			};
 
-         if (session) {
-            headers.Authorization = `Bearer ${session.access_token}`;
-         }
+			if (session) {
+				headers.Authorization = `Bearer ${session.access_token}`;
+			}
 
 			return { headers };
 		}
