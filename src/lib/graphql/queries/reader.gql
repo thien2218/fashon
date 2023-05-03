@@ -1,0 +1,10 @@
+query GetReader($id: uuid!) {
+	readers_by_pk(id: $id) {
+		username
+		annual_goal
+		is_vip_member
+		id
+		points
+		favourite_genres
+	}
+}

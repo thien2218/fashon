@@ -1,0 +1,9 @@
+query GetReaders($_has_keys_any: [String!]) {
+	readers(
+		order_by: { reputation: desc }
+		where: { favourite_genres: { _has_keys_any: $_has_keys_any } }
+	) {
+		id
+		username
+	}
+}

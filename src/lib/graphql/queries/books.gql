@@ -1,0 +1,12 @@
+query GetBooks($limit: Int = 20, $genres: [String!], $offset: Int) {
+	books(limit: $limit, where: { genre: { _in: $genres } }, offset: $offset) {
+		id
+		title
+		price
+		quantity
+		avg_rating
+		authors
+		allow_borrow
+		cover_url
+	}
+}
