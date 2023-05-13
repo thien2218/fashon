@@ -1,5 +1,8 @@
 overwrite: true
-schema: ${PUBLIC_GRAPHQL_URL}
+schema:
+  - ${PUBLIC_HASURA_GRAPHQL_API}:
+      headers:
+        x-hasura-admin-secret: ${HASURA_ADMIN_SECRET}
 documents: "src/**/*.gql"
 generates:
   src/lib/graphql/generated.d.ts:

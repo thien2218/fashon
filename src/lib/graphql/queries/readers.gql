@@ -1,9 +1,16 @@
-query GetReaders($_has_keys_any: [String!]) {
+query GetReaders($genres: [String!]) {
 	readers(
+      limit: 50
 		order_by: { reputation: desc }
-		where: { favourite_genres: { _has_keys_any: $_has_keys_any } }
+		where: { favourite_genres: { _has_keys_any: $genres } }
 	) {
 		id
 		username
+		photo_url
+		reviews_aggregate {
+			aggregate {
+				count
+			}
+		}
 	}
 }

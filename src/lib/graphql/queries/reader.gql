@@ -1,10 +1,31 @@
 query GetReader($id: uuid!) {
 	readers_by_pk(id: $id) {
+		id
 		username
 		annual_goal
 		is_vip_member
-		id
 		points
 		favourite_genres
+      markeds {
+         book {
+            authors
+            cover_url
+            id
+            subtitle
+            title
+         }
+      }
+      reviews {
+         id
+         dislike_count
+         like_count
+         rating
+         text
+         book {
+            cover_url
+            title
+            id
+         }
+      }
 	}
 }

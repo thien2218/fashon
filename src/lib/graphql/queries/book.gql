@@ -1,13 +1,11 @@
 query GetBook($id: uuid!) {
 	books_by_pk(id: $id) {
-		added_at
+		id
 		allow_borrow
 		authors
-		avg_rating
 		cover_url
 		description
 		genre
-		id
 		language
 		page_count
 		preview_link
@@ -15,7 +13,6 @@ query GetBook($id: uuid!) {
 		published_year
 		publisher
 		quantity
-		review_count
 		subtitle
 		title
 		reviews {
@@ -27,6 +24,15 @@ query GetBook($id: uuid!) {
 			reader {
 				id
 				username
+            photo_url
+			}
+		}
+		reviews_aggregate {
+			aggregate {
+				count
+				avg {
+					rating
+				}
 			}
 		}
 	}
