@@ -44,6 +44,7 @@
 		"@urql/svelte": "^3.0.4",
 		"axios": "^1.2.2",
 		"json2csv": "^5.0.7",
+		"svelte-star-rating": "^2.0.1",
 		"sveltekit-superforms": "^0.6.6",
 		"zod": "^3.20.2"
 	}

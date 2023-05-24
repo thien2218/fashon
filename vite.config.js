@@ -4,6 +4,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 const config = {
    optimizeDeps: {
       exclude: ['@urql/svelte'],
+      include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep'],
    },
 	plugins: [sveltekit()],
 	test: {

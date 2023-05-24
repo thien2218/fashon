@@ -55,4 +55,6 @@
 <!-- Should have Explore and Bestseller section in navbar -->
 <!-- Default homepage should redirect to /explore page -->
 
-<slot />
+<main class="pt-16 md:pt-24 px-8 mx-auto max-w-screen-xl bg-white">
+   <slot />
+</main>

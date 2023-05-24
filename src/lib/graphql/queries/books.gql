@@ -1,4 +1,4 @@
-query GetBooks($limit: Int = 20) {
+query GetBooks($limit: Int) {
 	books(limit: $limit) {
 		id
 		title
