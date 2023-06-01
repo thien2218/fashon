@@ -1,16 +1,12 @@
 <script lang="ts">
-	import StarRating from "svelte-star-rating";
-
-   const config = {
-      emptyColor: "#dbdbdb",
-      fullColor: "#ffc108",
-      size: 16,
-   }
+	import type { Reviews_Aggregate } from "$lib/graphql/generated";
+   import StarRating from "./StarRating.svelte";
 
 	export let id: string;
 	export let title: string;
 	export let price: number;
 	export let authors: string;
+   export let reviews_aggregate: Omit<Reviews_Aggregate, "nodes">;
 	// export let cover_url: string;
 </script>
 
@@ -25,12 +21,15 @@
 		</a>
 	</header>
 
-	<section class="font-medium truncate mb-[2px]">{title}</section>
+	<section class="font-medium truncate mb-[2px]">
+		<a href={`/book/${id}`}>{title}</a>
+	</section>
+
 	<section class="text-sm text-gray-500 mb-1 truncate">{JSON.parse(authors).join(", ")}</section>
 
 	<footer>
-      <StarRating rating={3} {config} />
+		<StarRating rating={3} />
 
-      <button type="button" class="btn variant-filled text-sm px-3.5">${price}</button>
-   </footer>
+		<button type="button" class="btn variant-filled text-sm px-3.5">${price}</button>
+	</footer>
 </div>
