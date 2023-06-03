@@ -11,7 +11,6 @@
 		cx="81.5"
 		cy="12.5"
 		r="5.75"
-		stroke="#1D232D"
 		stroke-width="3.5"
 		class="stroke-primary-700 dark:stroke-white"
 	/>
@@ -20,7 +19,6 @@
 		y="22"
 		width="15"
 		height="3"
-		fill="#1D232D"
 		class="fill-primary-700 dark:fill-white"
 	/>
 </svg>

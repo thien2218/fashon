@@ -66,14 +66,14 @@
 		<a
 			href="/"
 			class="text-primary-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-600 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-			sveltekit:prefetch
+			data-sveltekit-preload-data
 		>
 			<ShoppingCart size="18" strokeWidth="2.25" />
 		</a>
 		<a
 			href="/"
 			class="text-primary-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-600 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-			sveltekit:prefetch
+			data-sveltekit-preload-data
 		>
 			<User size="18" strokeWidth="2.25" />
 		</a>
