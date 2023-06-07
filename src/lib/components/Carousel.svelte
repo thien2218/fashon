@@ -28,16 +28,16 @@
 			src: "/thumbnail3.webp",
 			caption: "Explore endless style possibilities"
 		},
+      {
+         alt: "Fashion thumbnail 5",
+         src: "/thumbnail5.webp",
+         caption: "Experience the essence of premier Brands"
+      },
 		{
 			alt: "Fashion thumbnail 4",
 			src: "/thumbnail4.webp",
 			caption: "Find your perfect look today"
 		},
-		{
-			alt: "Fashion thumbnail 5",
-			src: "/thumbnail5.webp",
-			caption: "Experience the essence of premier Brands"
-		}
 	];
 
 	const onArrowKey = (e: KeyboardEvent, cb: Function) => {
@@ -56,6 +56,7 @@
 			let:showPage
 			{...carouselProps}
 		>
+         <!-- List of images with captions -->
 			{#each images as { src, alt, caption }, imgId (src)}
 				<div
 					class="relative h-52 xs:h-64 sm:h-80 md:h-96 lg:h-[32rem] xl:h-[36rem] w-full flex items-end justify-center"
@@ -74,6 +75,7 @@
 				</div>
 			{/each}
 
+         <!-- Navigation dots and Shop now button -->
 			<div
 				slot="dots"
 				class="absolute flex flex-col items-center mx-auto sm:mb-3 md:mb-6 lg:mb-24 bottom-0"
@@ -103,6 +105,7 @@
 				</div>
 			</div>
 
+         <!-- Show prev slide navigation button -->
 			<div slot="prev" class="absolute z-10 right-0 lg:m-8 sm:m-6 m-4 pointer-events-none">
 				<div
 					on:click={showPrevPage}
@@ -116,6 +119,7 @@
 				</div>
 			</div>
 
+         <!-- Show next slide navigation button -->
 			<div slot="next" class="absolute right-0 lg:m-8 sm:m-6 m-4 pointer-events-none">
 				<div
 					on:click={showNextPage}
