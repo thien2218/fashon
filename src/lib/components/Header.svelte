@@ -4,7 +4,7 @@
 	import { ShoppingCart, UserCircle } from "lucide-svelte";
 </script>
 
-<header class="absolute inset-x-0 top-0 py-6 z-50">
+<header class="fixed inset-x-0 top-0 py-6 z-50 bg-white dark:bg-primary">
 	<div class="container flex justify-between items-center">
 		<a href="/">
 			<Logo />
