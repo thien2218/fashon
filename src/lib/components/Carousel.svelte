@@ -1,8 +1,6 @@
 <script lang="ts">
 	import Carousel from "svelte-carousel";
 	import { browser } from "$app/environment";
-	import { ArrowRight, ChevronLeft, ChevronRight } from "svelte-heros-v2";
-	import { Button } from "flowbite-svelte";
 
 	const carouselProps = {
 		autoplay: true,
@@ -28,16 +26,16 @@
 			src: "/thumbnail3.webp",
 			caption: "Explore endless style possibilities"
 		},
-      {
-         alt: "Fashion thumbnail 5",
-         src: "/thumbnail5.webp",
-         caption: "Experience the essence of premier Brands"
-      },
+		{
+			alt: "Fashion thumbnail 5",
+			src: "/thumbnail5.webp",
+			caption: "Experience the essence of premier Brands"
+		},
 		{
 			alt: "Fashion thumbnail 4",
 			src: "/thumbnail4.webp",
 			caption: "Find your perfect look today"
-		},
+		}
 	];
 
 	const onArrowKey = (e: KeyboardEvent, cb: Function) => {
@@ -56,7 +54,7 @@
 			let:showPage
 			{...carouselProps}
 		>
-         <!-- List of images with captions -->
+			<!-- List of images with captions -->
 			{#each images as { src, alt, caption }, imgId (src)}
 				<div
 					class="relative h-52 xs:h-64 sm:h-80 md:h-96 lg:h-[32rem] xl:h-[36rem] w-full flex items-end justify-center"
@@ -75,18 +73,16 @@
 				</div>
 			{/each}
 
-         <!-- Navigation dots and Shop now button -->
+			<!-- Navigation dots and Shop now button -->
 			<div
 				slot="dots"
 				class="absolute flex flex-col items-center mx-auto sm:mb-3 md:mb-6 lg:mb-24 bottom-0"
 			>
 				<div class="max-w-max md:mb-10 mb-6">
-					<Button btnClass="bg-white py-2.5 px-[18px] rounded-lg text-primary-600 text-xs xs:text-sm sm:text-base md:text-lg hover:bg-primary-700 hover:text-white transition duration-300">
-						<div class="flex items-center gap-1.5">
-							<span>Shop now</span>
-							<ArrowRight strokeWidth="2.5" class="sm:h-4 sm:w-4 h-3 w-3" />
-						</div>
-					</Button>
+					<!-- BUTTON HERE -->
+					<div class="flex items-center gap-1.5">
+						<span>Shop now</span>
+					</div>
 				</div>
 
 				<div class="flex items-center justify-center flex-wrap px-8">
@@ -105,31 +101,25 @@
 				</div>
 			</div>
 
-         <!-- Show prev slide navigation button -->
+			<!-- Show prev slide navigation button -->
 			<div slot="prev" class="absolute z-10 right-0 lg:m-8 sm:m-6 m-4 pointer-events-none">
 				<div
 					on:click={showPrevPage}
 					on:keydown={(e) => onArrowKey(e, showNextPage)}
 					class="lg:h-12 md:h-9 sm:h-8 h-7 aspect-square flex justify-center items-center bg-white hover:bg-primary-100 rounded-tl-lg rounded-bl-lg border-r border-r-primary-300 cursor-pointer lg:mr-12 md:mr-9 sm:mr-8 mr-7 pointer-events-auto [&>svg]:pointer-events-none [&>svg]:hover:text-primary-700"
 				>
-					<ChevronLeft
-						strokeWidth="2"
-						class="lg:h-5 lg:w-5 md:h-4 md:w-4 sm:h-3.5 sm:w-3.5 h-3 w-3 text-primary-500"
-					/>
+					<!-- ARROW-LEFT HERE -->
 				</div>
 			</div>
 
-         <!-- Show next slide navigation button -->
+			<!-- Show next slide navigation button -->
 			<div slot="next" class="absolute right-0 lg:m-8 sm:m-6 m-4 pointer-events-none">
 				<div
 					on:click={showNextPage}
 					on:keydown={(e) => onArrowKey(e, showNextPage)}
 					class="lg:h-12 md:h-9 sm:h-8 h-7 aspect-square flex justify-center items-center bg-white hover:bg-primary-100 rounded-tr-lg rounded-br-lg cursor-pointer pointer-events-auto [&>svg]:pointer-events-none [&>svg]:hover:text-primary-700"
 				>
-					<ChevronRight
-						strokeWidth="2"
-						class="lg:h-5 lg:w-5 md:h-4 md:w-4 sm:h-3.5 sm:w-3.5 h-3 w-3 text-primary-500"
-					/>
+					<!-- ARROW-RIGHT HERE -->
 				</div>
 			</div>
 		</Carousel>

@@ -21,7 +21,7 @@
 		"@graphql-codegen/typescript-operations": "^3.0.4",
 		"@graphql-typed-document-node/core": "^3.1.1",
 		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/kit": "^1.0.0",
 		"autoprefixer": "^10.4.13",
 		"graphql": "^16.6.0",
@@ -30,27 +30,25 @@
 		"prettier-plugin-svelte": "^2.8.1",
 		"svelte": "^3.54.0",
 		"svelte-check": "^2.9.2",
-		"svelte-heros-v2": "^0.6.6",
 		"tailwindcss": "^3.2.4",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.4",
 		"vite": "^4.0.0",
-		"vitest": "^0.25.3"
+		"vitest": "^0.32.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"@popperjs/core": "^2.11.8",
 		"@supabase/auth-helpers-sveltekit": "^0.8.7",
 		"@supabase/supabase-js": "^2.2.3",
 		"@urql/svelte": "^3.0.4",
-		"axios": "^1.2.2",
-		"classnames": "^2.3.2",
-		"flowbite": "^1.6.5",
-		"flowbite-svelte": "^0.37.3",
-		"json2csv": "^5.0.7",
+		"class-variance-authority": "^0.6.0",
+		"clsx": "^1.2.1",
+		"lucide-svelte": "^0.244.0",
 		"svelte-carousel": "^1.0.25",
 		"svelte-star-rating": "^2.0.1",
-		"sveltekit-superforms": "^0.6.6",
+		"sveltekit-superforms": "^1.0.0",
+		"tailwind-merge": "^1.13.1",
+		"tailwindcss-animate": "^1.0.6",
 		"zod": "^3.20.2"
 	}
 }

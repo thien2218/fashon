@@ -10,7 +10,7 @@
 	import { supabase } from "$lib/supabase";
 	import { invalidate } from "$app/navigation";
 	import { onMount } from "svelte";
-   import  Header from "$lib/components/Header.svelte";
+	import Header from "$lib/components/Header.svelte";
 
 	import {
 		createClient,
@@ -19,7 +19,6 @@
 		cacheExchange,
 		fetchExchange
 	} from "@urql/svelte";
-
 
 	export let data: PageData;
 	$: ({ session } = data);
@@ -57,6 +56,6 @@
 
 <main class="pt-20 sm:pt-24 px-4 pb-8 mx-auto max-w-screen-xl bg-white">
 	<div class="container mx-auto">
-      <slot />
-   </div>
+		<slot />
+	</div>
 </main>
