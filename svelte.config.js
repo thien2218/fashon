@@ -9,6 +9,9 @@ const config = {
 			"$components/*": "src/lib/components/*"
 		}
 	},
-	preprocess: vitePreprocess()
+	preprocess: vitePreprocess(),
+	shadcn: {
+		componentPath: "./src/lib/components/ui"
+	}
 };
 export default config;

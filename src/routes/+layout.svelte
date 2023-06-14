@@ -54,8 +54,8 @@
 
 <Header />
 
-<main class="pt-20 sm:pt-24 px-4 pb-8 mx-auto max-w-screen-xl bg-white">
-	<div class="container mx-auto">
+<main class="pt-20 sm:pt-24 px-4 pb-8">
+	<div class="container">
 		<slot />
 	</div>
 </main>
