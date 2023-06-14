@@ -11,13 +11,13 @@
 		</a>
 
 		<ul class="md:flex hidden lg:gap-8 gap-6">
-			<li class="text-sm font-medium">
+			<li class="text-sm font-medium hover:text-primary/80">
 				<a href="/">Shop</a>
 			</li>
-			<li class="text-sm font-medium">
+			<li class="text-sm font-medium hover:text-primary/80">
 				<a href="/">Most wanted</a>
 			</li>
-			<li class="text-sm font-medium">
+			<li class="text-sm font-medium hover:text-primary/80">
 				<a href="/">New arrival</a>
 			</li>
 		</ul>
@@ -27,10 +27,14 @@
 				<Input type="email" placeholder="Search..." />
 			</div>
 			<a href="/">
-				<ShoppingCart class="sm:w-[1.125rem] w-4 sm:stroke-[2.25px] aspect-square" />
+				<ShoppingCart
+					class="sm:w-[1.125rem] w-4 sm:stroke-[2.25px] aspect-square hover:stroke-primary/80"
+				/>
 			</a>
 			<a href="/">
-				<UserCircle class="sm:w-[1.125rem] w-4 sm:stroke-[2.25px] aspect-square" />
+				<UserCircle
+					class="sm:w-[1.125rem] w-4 sm:stroke-[2.25px] aspect-square hover:stroke-primary/80"
+				/>
 			</a>
 		</div>
 	</div>

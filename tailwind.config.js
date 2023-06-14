@@ -1,4 +1,4 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
+import { fontFamily, screens } from "tailwindcss/defaultTheme";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
@@ -12,6 +12,11 @@ const config = {
 				DEFAULT: "1rem",
 				sm: "2rem"
 			}
+		},
+		screens: {
+			ks: "640px",
+			...screens,
+			sm: "544px"
 		},
 		extend: {
 			colors: {

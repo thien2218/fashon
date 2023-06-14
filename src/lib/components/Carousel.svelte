@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Carousel from "svelte-carousel";
 	import { browser } from "$app/environment";
+	import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-svelte";
+	import Button from "./ui/button/Button.svelte";
 
 	const carouselProps = {
 		autoplay: true,
@@ -57,11 +59,11 @@
 			<!-- List of images with captions -->
 			{#each images as { src, alt, caption }, imgId (src)}
 				<div
-					class="relative h-52 xs:h-64 sm:h-80 md:h-96 lg:h-[32rem] xl:h-[36rem] w-full flex items-end justify-center"
+					class="relative h-52 ks:h-80 sm:h-64 md:h-96 lg:h-[32rem] xl:h-[36rem] w-full flex items-end justify-center"
 				>
 					{#if loaded.includes(imgId)}
 						<div
-							class="absolute inset-0 bg-black/40 md:px-16 sm:px-12 px-8 text-white lg:text-[72px] md:text-[56px] sm:text-[48px] xs:text-[32px] text-[24px] leading-[1.125] font-semibold text-center flex items-center justify-center"
+							class="absolute inset-0 bg-black/40 md:px-16 sm:px-12 px-8 text-white xl:text-7xl lg:text-6xl md:text-5xl ks:text-4xl sm:text-3xl text-2xl leading-[1.125] font-semibold text-center flex items-center justify-center"
 						>
 							<div class="relative -translate-y-1/3">
 								{caption}
@@ -79,10 +81,12 @@
 				class="absolute flex flex-col items-center mx-auto sm:mb-3 md:mb-6 lg:mb-24 bottom-0"
 			>
 				<div class="max-w-max md:mb-10 mb-6">
-					<!-- BUTTON HERE -->
-					<div class="flex items-center gap-1.5">
-						<span>Shop now</span>
-					</div>
+					<Button class="ks:text-sm text-xs" variant="secondary" href="/">
+						<div class="flex items-center ks:gap-1.5 gap-1">
+							<span>Shop now</span>
+							<ArrowRight class="ks:w-4 w-3.5 aspect-square" />
+						</div>
+					</Button>
 				</div>
 
 				<div class="flex items-center justify-center flex-wrap px-8">
@@ -106,9 +110,9 @@
 				<div
 					on:click={showPrevPage}
 					on:keydown={(e) => onArrowKey(e, showNextPage)}
-					class="lg:h-12 md:h-9 sm:h-8 h-7 aspect-square flex justify-center items-center bg-white hover:bg-primary-100 rounded-tl-lg rounded-bl-lg border-r border-r-primary-300 cursor-pointer lg:mr-12 md:mr-9 sm:mr-8 mr-7 pointer-events-auto [&>svg]:pointer-events-none [&>svg]:hover:text-primary-700"
+					class="lg:h-12 md:h-9 sm:h-8 h-7 aspect-square flex justify-center items-center bg-white hover:bg-white/90 lg:rounded-tl-lg lg:rounded-bl-lg md:rounded-tl-md md:rounded-bl-md rounded-tl rounded-bl border-r border-r-primary-300 cursor-pointer lg:mr-12 md:mr-9 sm:mr-8 mr-7 pointer-events-auto [&>svg]:pointer-events-none"
 				>
-					<!-- ARROW-LEFT HERE -->
+					<ChevronLeft class="lg:w-6 md:w-5 sm:w-[18px] w-4 aspect-square" />
 				</div>
 			</div>
 
@@ -117,9 +121,9 @@
 				<div
 					on:click={showNextPage}
 					on:keydown={(e) => onArrowKey(e, showNextPage)}
-					class="lg:h-12 md:h-9 sm:h-8 h-7 aspect-square flex justify-center items-center bg-white hover:bg-primary-100 rounded-tr-lg rounded-br-lg cursor-pointer pointer-events-auto [&>svg]:pointer-events-none [&>svg]:hover:text-primary-700"
+					class="lg:h-12 md:h-9 sm:h-8 h-7 aspect-square flex justify-center items-center bg-white hover:bg-white/90 hover:bg-primary-100 lg:rounded-tr-lg lg:rounded-br-lg md:rounded-tr-md md:rounded-br-md rounded-tr rounded-br cursor-pointer pointer-events-auto [&>svg]:pointer-events-none"
 				>
-					<!-- ARROW-RIGHT HERE -->
+					<ChevronRight class="lg:w-6 md:w-5 sm:w-[18px] w-4 aspect-square" />
 				</div>
 			</div>
 		</Carousel>

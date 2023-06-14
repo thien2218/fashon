@@ -1,5 +1,5 @@
 <script lang="ts">
-	// import Carousel from "$lib/components/Carousel.svelte";
+	import Carousel from "$lib/components/Carousel.svelte";
 	// import {
 	// 	Adidas,
 	// 	Chanel,
@@ -13,3 +13,5 @@
 	// 	Converse
 	// } from "$lib/components/svg";
 </script>
+
+<Carousel />
