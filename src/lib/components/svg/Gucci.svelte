@@ -1,7 +1,7 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	width="74"
-	height="75"
+	width="45"
+	height="45"
 	viewBox="0 0 26.088 26.999"
 	id="gucci"
 	><path

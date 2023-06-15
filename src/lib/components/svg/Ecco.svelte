@@ -1,7 +1,7 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	width="75"
-	height="25"
+	width="60"
+	height="20"
 	viewBox="0 0 175.529 50.403"
 	id="ecco"
 	><path

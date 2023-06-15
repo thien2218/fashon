@@ -1,4 +1,4 @@
-import { fontFamily, screens } from "tailwindcss/defaultTheme";
+import { fontFamily, screens, fontSize } from "tailwindcss/defaultTheme";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
@@ -17,6 +17,10 @@ const config = {
 			ks: "640px",
 			...screens,
 			sm: "544px"
+		},
+		fontSize: {
+			...fontSize,
+			xs: ["13px", "18px"]
 		},
 		extend: {
 			colors: {

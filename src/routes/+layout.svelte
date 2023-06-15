@@ -54,6 +54,6 @@
 
 <Header />
 
-<main class="container pt-20 sm:pt-24 pb-8">
+<main class="flex flex-col container pt-20 sm:pt-24 pb-8">
 	<slot />
 </main>

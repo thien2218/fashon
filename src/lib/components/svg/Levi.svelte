@@ -1,7 +1,7 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	width="75"
-	height="37"
+	width="50"
+	height="25"
 	viewBox="2.698 2.689 395 195"
 	id="levi"
 	><path

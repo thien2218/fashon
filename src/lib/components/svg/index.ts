@@ -7,5 +7,4 @@ export { default as Ecco } from "./Ecco.svelte";
 export { default as Gucci } from "./Gucci.svelte";
 export { default as Levi } from "./Levi.svelte";
 export { default as Nikke } from "./Nikke.svelte";
-export { default as Puma } from "./Puma.svelte";
 export { default as Logo } from "./Logo.svelte";

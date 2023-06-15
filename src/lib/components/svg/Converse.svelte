@@ -1,7 +1,7 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	width="75"
-	height="50"
+	width="55"
+	height="37"
 	viewBox="0 0 126.58 77.938"
 	id="converse"
 	><path
