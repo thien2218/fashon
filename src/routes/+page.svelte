@@ -4,6 +4,8 @@
 	import Offers from "$components/Offers.svelte";
 	import Currated from "$components/Currated.svelte";
 	import Carousel from "$lib/components/Carousel.svelte";
+	import Sales from "$components/Sales.svelte";
+	import Subscribe from "$components/Subscribe.svelte";
 </script>
 
 <Carousel />
@@ -13,4 +15,6 @@
 	<Offers />
 	<Currated />
 	<Featured />
+	<Sales />
+	<Subscribe />
 </div>

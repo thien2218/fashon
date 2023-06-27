@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Logo } from "$lib/components/svg";
 	import Input from "./ui/input/Input.svelte";
-	import { ShoppingCart, UserCircle } from "lucide-svelte";
+	import { Search, ShoppingCart, UserCircle } from "lucide-svelte";
 </script>
 
 <header class="fixed inset-x-0 top-0 py-6 z-50 bg-white dark:bg-primary">
@@ -24,6 +24,10 @@
 
 		<div class="flex items-center gap-6">
 			<div class="relative flex items-center">
+				<div class="absolute px-3 pointer-events-none">
+					<Search class="stroke-muted-foreground w-[1.125rem] aspect-square stroke-[1.75px]" />
+				</div>
+
 				<Input type="email" placeholder="Search..." />
 			</div>
 			<a href="/">

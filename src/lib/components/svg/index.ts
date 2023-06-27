@@ -8,3 +8,7 @@ export { default as Gucci } from "./Gucci.svelte";
 export { default as Levi } from "./Levi.svelte";
 export { default as Nikke } from "./Nikke.svelte";
 export { default as Logo } from "./Logo.svelte";
+export { default as Facebook } from "./Facebook.svelte";
+export { default as Instagram } from "./Instagram.svelte";
+export { default as Twitter } from "./Twitter.svelte";
+export { default as Github } from "./Github.svelte";

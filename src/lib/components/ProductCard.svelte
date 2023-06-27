@@ -1,6 +1,4 @@
 <script>
-	import { ShoppingBag } from "lucide-svelte";
-	import Button from "./ui/button/Button.svelte";
 	import { Card, CardContent, CardHeader } from "./ui/card";
 </script>
 
@@ -10,16 +8,24 @@
 	</CardHeader>
 
 	<CardContent class="p-0">
-		<Button class="sm:px-0 px-0 aspect-square flex justify-center items-center float-right">
-			<ShoppingBag size={16} />
-		</Button>
+		<div class="flex justify-between mb-2">
+			<h2>Autumn dress</h2>
+			<p class="font-semibold text-xl">$58.60</p>
+		</div>
 
-		<h2>Autumn dress</h2>
-		<p class="font-semibold text-xl mt-1">
-			$58.60
-			<span class="text-sm font-medium text-primary/50 ml-1.5 line-through decoration-primary/50">
+		<div class="flex justify-between">
+			<ul class="flex gap-2">
+				<li>
+					<div class="rounded-full h-4 w-4 bg-slate-600" />
+				</li>
+				<li>
+					<div class="rounded-full h-4 w-4 bg-slate-800" />
+				</li>
+			</ul>
+
+			<p class="text-sm font-medium text-primary/50 ml-1.5 line-through decoration-primary/50">
 				$80.99
-			</span>
-		</p>
+			</p>
+		</div>
 	</CardContent>
 </Card>

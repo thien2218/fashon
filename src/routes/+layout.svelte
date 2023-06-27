@@ -11,6 +11,7 @@
 	import { invalidate } from "$app/navigation";
 	import { onMount } from "svelte";
 	import Header from "$lib/components/Header.svelte";
+	import Footer from "$components/Footer.svelte";
 
 	import {
 		createClient,
@@ -57,3 +58,5 @@
 <main class="flex flex-col container pt-20 sm:pt-24 pb-8">
 	<slot />
 </main>
+
+<Footer />
