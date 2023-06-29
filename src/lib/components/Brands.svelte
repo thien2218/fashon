@@ -1,6 +1,6 @@
 <script>
 	import Section from "./Section.svelte";
-	import { Adidas, CalvinKlein, Chanel, Converse, Dolce, Ecco, Gucci, Levi, Nikke } from "./svg";
+	import { Adidas, CalvinKlein, Chanel, Converse, Dolce, Ecco, Gucci, Levi, Nike } from "./svg";
 </script>
 
 <Section title="Brands">
@@ -12,7 +12,7 @@
 		<Dolce />
 		<Levi />
 		<Ecco />
-		<Nikke />
+		<Nike />
 		<Converse />
 	</div>
 </Section>

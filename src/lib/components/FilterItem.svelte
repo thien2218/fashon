@@ -6,7 +6,9 @@
 </script>
 
 <AccordionItem value={id}>
-	<AccordionTrigger class="font-normal bg-transparent px-4 py-2 my-2 rounded-md hover:no-underline">
+	<AccordionTrigger
+		class="font-normal bg-transparent px-4 py-2 my-2 rounded-md hover:no-underline text-sm"
+	>
 		{title}
 	</AccordionTrigger>
 

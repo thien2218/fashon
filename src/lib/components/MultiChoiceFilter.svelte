@@ -19,7 +19,7 @@
 	{#each item.list as element, i (i)}
 		<div class="flex items-center gap-3">
 			<Checkbox id={element} bind:checked={checked[i]} />
-			<Label for={element}>{capitalize(element)}</Label>
+			<Label class="font-normal" for={element}>{capitalize(element)}</Label>
 		</div>
 	{/each}
 </FilterItem>

@@ -12,7 +12,7 @@
 
 		<ul class="md:flex hidden lg:gap-8 gap-6">
 			<li class="text-sm font-medium hover:text-primary/80">
-				<a href="/">Shop</a>
+				<a href="/shop">Shop</a>
 			</li>
 			<li class="text-sm font-medium hover:text-primary/80">
 				<a href="/">Most wanted</a>
